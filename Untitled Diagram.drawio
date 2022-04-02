@@ -1,1 +1,142 @@
-<mxfile host="app.diagrams.net" modified="2022-04-02T08:59:22.242Z" agent="5.0 (X11)" etag="46iQnzDaOSp5uy-OojlF" version="17.4.0" type="github"><diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">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</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-04-02T09:29:19.869Z" agent="5.0 (X11)" etag="M5ONFzGwn2KF5KzIRC6p" version="17.4.0" type="github">
+  <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
+    <mxGraphModel dx="868" dy="464" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5d2195bd80daf111-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;labelBackgroundColor=none;startFill=0;endArrow=open;endFill=0;endSize=10;fontFamily=Verdana;fontSize=10;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="545" y="970" />
+              <mxPoint x="545" y="970" />
+            </Array>
+            <mxPoint x="545" y="962.9999999999998" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5d2195bd80daf111-34" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;labelBackgroundColor=none;startFill=0;endArrow=open;endFill=0;endSize=10;fontFamily=Verdana;fontSize=10;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="1029" />
+              <mxPoint x="410" y="1029" />
+            </Array>
+            <mxPoint x="380" y="1029.0588235294117" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5d2195bd80daf111-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;labelBackgroundColor=none;startFill=0;endArrow=open;endFill=0;endSize=10;fontFamily=Verdana;fontSize=10;" parent="1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points" />
+            <mxPoint x="640" y="300" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5d2195bd80daf111-18" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Shape&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ dimension&lt;span&gt;&lt;/span&gt;: int&lt;br&gt;+ min_points_for_fitting: int&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ accept(Visitor, *args): obj&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ randomize(): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ plot(canvas): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
+          <mxGeometry x="60" y="87" width="190" height="153" as="geometry" />
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-1" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&lt;b&gt;Line2D&lt;/b&gt;&lt;/i&gt;&lt;b&gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ dimension&lt;span&gt;&lt;/span&gt;: int&lt;br&gt;+ min_points_for_fitting: int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- p1: Vector2d&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- p2: Vector2d&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): Line2D&lt;br&gt;+ randomize(): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ plot(canvas): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_p1(Vector2d): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_p2(Vector2d): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
+          <mxGeometry x="17" y="336" width="190" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-4" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.479;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="0LW8psPkYJi9jbIiEvqm-1" target="5d2195bd80daf111-18" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="192" y="408" as="sourcePoint" />
+            <mxPoint x="352" y="408" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&lt;b&gt;Circle&lt;/b&gt;&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ dimension&lt;span&gt;&lt;/span&gt;: int&lt;br&gt;+ min_points_for_fitting: int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- center: Vector2d&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- radius: float&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): Circle&lt;br&gt;+ randomize(): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ plot(canvas): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_center(Vector2d): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_radius(float): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
+          <mxGeometry x="250" y="336" width="190" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&lt;b&gt;Plane&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ dimension&lt;span&gt;&lt;/span&gt;: int&lt;br&gt;+ min_points_for_fitting: int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- p1: Vector3d&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- p2: Vector3d&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- p3: Vector3d&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): Plane&lt;br&gt;+ randomize(): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ plot(canvas): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_p1(Vector3d): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_p2(Vector3d): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_p3(Vector3d): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
+          <mxGeometry x="468" y="336" width="190" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-7" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&lt;b&gt;Line3D&lt;/b&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ dimension&lt;span&gt;&lt;/span&gt;: int&lt;br&gt;+ min_points_for_fitting: int&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- p1: Vector3d&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- p2: Vector3d&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): Line3D&lt;br&gt;+ randomize(): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ plot(canvas): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_p1(Vector3d): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ set_p2(Vector3d): void&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
+          <mxGeometry x="684" y="336" width="190" height="180" as="geometry" />
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-8" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="0LW8psPkYJi9jbIiEvqm-5" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="120.00999999999999" y="348" as="sourcePoint" />
+            <mxPoint x="252" y="231" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="345" y="231" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-9" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="0LW8psPkYJi9jbIiEvqm-6" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="132.01" y="360" as="sourcePoint" />
+            <mxPoint x="252" y="204" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="564" y="204" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0LW8psPkYJi9jbIiEvqm-10" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="0LW8psPkYJi9jbIiEvqm-7" edge="1">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="636" y="300" as="sourcePoint" />
+            <mxPoint x="252" y="174" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="780" y="174" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-5" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Visitor&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): Visitor&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit(Shape, *args): obj&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D, *args): obj&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D, *args): obj&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle, *args): obj&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane, *args): obj&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="336" y="612" width="247" height="168" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;GroundTruthGenerator&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): &lt;i&gt;GroundTruthGenerator&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D): Vector2d&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D): Vector3d&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle): Vector2d&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane): Vector3d&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="17" y="828" width="247" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-7" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;ShapeFitter&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): &lt;i&gt;ShapeFitter&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D, list&amp;lt;vector&amp;gt;): Line2D&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D, list&amp;lt;vector&amp;gt;): Line3D&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle, list&amp;lt;vector&amp;gt;): Circle&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane, list&amp;lt;vector&amp;gt;): Plane&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- validate_input_points(Shape, list&amp;lt;vector&amp;gt;): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="288" y="828" width="312" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-8" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;ShapeRegressor&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): &lt;i&gt;ShapeRegressor&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D, list&amp;lt;vector&amp;gt;): Line2D&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D, list&amp;lt;vector&amp;gt;): Line3D&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle, list&amp;lt;vector&amp;gt;): Circle&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane, list&amp;lt;vector&amp;gt;): Plane&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- validate_input_points(Shape, list&amp;lt;vector&amp;gt;): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="120" y="1032" width="312" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-9" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.479;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.437;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="UJlKaWdvmAagKJ9E7w59-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="444.01" y="828" as="sourcePoint" />
+            <mxPoint x="444" y="792" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-11" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.538;exitY=-0.014;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.008;entryY=0.649;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="UJlKaWdvmAagKJ9E7w59-6" target="UJlKaWdvmAagKJ9E7w59-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="456.01" y="840" as="sourcePoint" />
+            <mxPoint x="455.9390000000001" y="792" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="150" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-12" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=-0.008;entryY=0.798;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="UJlKaWdvmAagKJ9E7w59-8" target="UJlKaWdvmAagKJ9E7w59-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="468.01" y="852" as="sourcePoint" />
+            <mxPoint x="467.9390000000001" y="804" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="276" y="746" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-14" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="UJlKaWdvmAagKJ9E7w59-13" target="UJlKaWdvmAagKJ9E7w59-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="456.01" y="840" as="sourcePoint" />
+            <mxPoint x="455.9390000000001" y="792" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="684" y="738" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-15" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;DistanceToShape&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): &lt;i&gt;DistanceToShape&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D, Shape): float&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D, Shape): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle, Shape): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane, Shape): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- is_same_shape_type(Shape, Shape): bool&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="528" y="1248" width="312" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-16" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.535;exitY=-0.026;exitDx=0;exitDy=0;entryX=1.012;entryY=0.821;entryDx=0;entryDy=0;exitPerimeter=0;entryPerimeter=0;" edge="1" parent="1" source="UJlKaWdvmAagKJ9E7w59-15" target="UJlKaWdvmAagKJ9E7w59-5">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="696" y="1044" as="sourcePoint" />
+            <mxPoint x="595" y="750" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="696" y="750" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-13" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;DistanceToPoint&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): &lt;i&gt;DistanceToPoint&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D, Vector2d): float&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D, Vector3d): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle, Vector2d): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane, Vector3d): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- validate_input_point(Shape, Vector): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="528" y="1032" width="312" height="156" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
