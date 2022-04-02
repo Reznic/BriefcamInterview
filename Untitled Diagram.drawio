@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-02T16:19:50.083Z" agent="5.0 (X11)" etag="CwE-RQCZCKfIuIQwGq13" version="17.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-02T17:37:07.512Z" agent="5.0 (X11)" etag="GjesnJhflntnwSAB-2zl" version="17.4.0" type="github">
   <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
-    <mxGraphModel dx="964" dy="516" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" background="none" math="0" shadow="0">
+    <mxGraphModel dx="1281" dy="464" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -81,6 +81,9 @@
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-6" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;GroundTruthGenerator&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): &lt;i&gt;GroundTruthGenerator&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D): Vector2d&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D): Vector3d&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle): Vector2d&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane): Vector3d&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
           <mxGeometry x="36" y="1008" width="247" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-54" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="UJlKaWdvmAagKJ9E7w59-7" target="UJlKaWdvmAagKJ9E7w59-5">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-7" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;i&gt;ShapeFitter&lt;/i&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__&lt;span&gt;&lt;/span&gt;(): &lt;i&gt;ShapeFitter&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line2d(Line2D, list&amp;lt;vector&amp;gt;): Line2D&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_line3d(Line3D, list&amp;lt;vector&amp;gt;): Line3D&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_circle(Circle, list&amp;lt;vector&amp;gt;): Circle&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ visit_plane(Plane, list&amp;lt;vector&amp;gt;): Plane&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- validate_input_points(Shape, list&amp;lt;vector&amp;gt;): void&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
           <mxGeometry x="307" y="1008" width="312" height="156" as="geometry" />
@@ -175,16 +178,16 @@
           <mxGeometry y="68" width="221" height="40" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-29" value="SamplesSuit" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
-          <mxGeometry x="3" y="1908" width="197" height="108" as="geometry" />
+          <mxGeometry x="3" y="1908" width="237" height="108" as="geometry" />
         </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-30" value="shape_data: dict" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-29">
-          <mxGeometry y="26" width="197" height="26" as="geometry" />
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-30" value="shape_data: dict&lt;id, ShapeSamples&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-29">
+          <mxGeometry y="26" width="237" height="26" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-29">
-          <mxGeometry y="52" width="197" height="8" as="geometry" />
+          <mxGeometry y="52" width="237" height="8" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-32" value="+ save_to_file(file): void&#xa;+ load_from_file(file): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-29">
-          <mxGeometry y="60" width="197" height="48" as="geometry" />
+          <mxGeometry y="60" width="237" height="48" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-33" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" target="UJlKaWdvmAagKJ9E7w59-29">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -244,6 +247,36 @@
               <mxPoint x="744" y="1776" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-53" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Estimator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- samples_suit: SamplesSuit&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- algorithm: RANSACEstimator&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- estimations: SamplesSuitEstimations&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__(SamplesSuit): Estimator&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ estimate(): SamplesSuitEstimations&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="-30" y="2088" width="247" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-56" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;RANSACEstimator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;-distance_to_point: &lt;i&gt;DistanceToPoint&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-shape_fitter: ShapeFitter&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-shape_regressor: ShapeRegressor&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-candidates_scores: dict&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-shape_factory: ShapesFactory&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ estimate_shape(list&amp;lt;Vector&amp;gt;): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- init_candidate_shapes(dimension: float): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- ransac(list&amp;lt;Vector&amp;gt;, Shape): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- find_near_samples(Shape, list&amp;lt;Vector&amp;gt;): list&amp;lt;Vector&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- get_fitting_score(Shape, list&amp;lt;Vector&amp;gt;): float&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" vertex="1" parent="1">
+          <mxGeometry x="278" y="2232" width="353" height="216" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-57" value="SamplesSuitEstimations" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="-48" y="2286" width="237" height="108" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-58" value="shape_data: dict&lt;id, Shape&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-57">
+          <mxGeometry y="26" width="237" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-59" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-57">
+          <mxGeometry y="52" width="237" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-60" value="+ save_to_file(file): void&#xa;+ load_from_file(file): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-57">
+          <mxGeometry y="60" width="237" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-62" value="EstimatorTester" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="2508" width="330" height="156" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-63" value="+ estimations: SamplesSuitEstimations&#xa;+ ground_truth: SamplesSuit&#xa;+ estimation_distances: dict&lt;id, float&gt;&#xa;- distance_to_shape: DistanceToShape&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-62">
+          <mxGeometry y="26" width="330" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-64" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-62">
+          <mxGeometry y="96" width="330" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-65" value="+ __init__(SamplesSuit, SamplesSuitEstimations)&#xa;+ evaluate(): float&#xa;+ plot(canvas): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="UJlKaWdvmAagKJ9E7w59-62">
+          <mxGeometry y="104" width="330" height="52" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
