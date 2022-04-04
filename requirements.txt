@@ -1,3 +1,5 @@
 docopt
 numpy
 matplotlib
+pytest
+pickle

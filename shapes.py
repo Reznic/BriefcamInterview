@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 import numpy as np
+import pickle
 
 
 class Shape(ABC):
@@ -45,11 +46,13 @@ class ShapeFactory:
 
     def get_random_shapes(self, shape_amounts: dict):
         shapes = []
-        for shape_name, amount in shape_amounts:
+        for shape_name, amount in shape_amounts.items():
             for _ in range(amount):
                 shape = self._get_shape(shape_name)
                 shape.randomize()
                 shapes.append(shape)
+
+        return shapes
 
 
 class ShapeSamples:
@@ -74,15 +77,16 @@ class SamplesSuit:
         return self._suit.values()
 
     def save_to_file(self, out_file):
-        pass
+        pickle.dump(self, out_file)
 
-    def load_from_file(self, in_file):
-        pass
+    @staticmethod
+    def load_from_file(in_file):
+        return pickle.load(in_file)
 
 
 class ShapeVisitor(ABC):
     def visit(self, shape: Shape, *args, **kwargs):
-        shape_class = shape.__class__.lower()
+        shape_class = shape.__class__.__name__.lower()
         method_name = f"visit_{shape_class}"
         visit_method = self.__getattribute__(method_name)
         return visit_method(shape, *args, **kwargs)
@@ -98,5 +102,5 @@ class InvalidShapeError(BaseException):
 
 class ShapeOperationNotImplementedError(NotImplementedError):
     def __init__(self, visitor, shape):
-        self.message = f"{visitor.__class__} operation not implemented " \
-                       f"for {shape.__class__} shape."
+        self.message = f"{visitor.__class__.__name__} operation not implemented " \
+                       f"for {shape.__class__.__name__} shape."

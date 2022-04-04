@@ -22,22 +22,26 @@ class Generator:
     OUTLIERS_RANGE = 100
 
     def __init__(self, config):
-        self.config = config
         self.shape_factory = ShapeFactory()
+        self.config = config
+        self.ground_truth_generator = GroundTruthSamplesGenerator()
+        self.inliers_num = int(self.config.num_points * self.INLIERS_RATIO)
+        outliers_ratio = 1 - self.INLIERS_RATIO
+        self.outliers_num = int(self.config.num_points * outliers_ratio)
 
-    def _get_gaussian_noise(self):
-        pass
+    def _get_gaussian_noise(self, dimension):
+        # Todo: implement
+        return np.zeros(dimension)
 
     def _get_inlier_samples(self, shape):
-        inliers_num = self.config.num_points * self.INLIERS_RATIO
-
-        pass
+        inlier_sample = shape.accept(self.ground_truth_generator)
+        noisy_inlier_sample = \
+            inlier_sample + self._get_gaussian_noise(shape.DIMENSION)
+        return noisy_inlier_sample
 
     def _get_outlier_samples(self, dimension):
-        outliers_ratio = 1 - self.INLIERS_RATIO
-        outliers_num = self.config.num_points * outliers_ratio
         outlier_samples = \
-            self.OUTLIERS_RANGE * np.random.rand(outliers_num, dimension)
+            self.OUTLIERS_RANGE * np.random.rand(self.outliers_num, dimension)
         return outlier_samples
 
     def _get_shape_samples(self, shape):
@@ -58,7 +62,8 @@ class Generator:
 
 class GroundTruthSamplesGenerator(ShapeVisitor):
     def visit_line2d(self, shape: Line2D, *args, **kwargs):
-        return None
+        # Todo: Implement
+        return np.zeros(2)
 
 
 def parse_args():
@@ -67,10 +72,8 @@ def parse_args():
     output_path = arguments["<output_path>"]
     debug = arguments.get("debug", False)
     config_path = path.abspath(config_path)
-    output_path = path.abspath(output_path)
-
     validate_file_path(config_path)
-    validate_file_path(output_path)
+    output_path = path.abspath(output_path)
 
     return config_path, output_path, debug
 
@@ -100,4 +103,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
