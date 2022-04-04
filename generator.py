@@ -1,7 +1,7 @@
 """Generation of noisy sample data for random shapes .
 
 Usage:
-  generator.py <config_path> <output_path>
+  generator.py <config_path> <output_path> [--debug]
   generator.py (-h | --help)
 
 Options:
@@ -31,7 +31,7 @@ class Generator:
         self.outliers_num = int(self.config.num_points * outliers_ratio)
 
     def _get_gaussian_noise(self, dimension, num, stddev):
-        return np.random.rand(num, dimension) * stddev
+        return np.random.randn(num, dimension) * stddev
 
     def _get_inlier_samples(self, shape):
         inlier_samples = shape.accept(self.ground_truth_generator,
@@ -44,7 +44,8 @@ class Generator:
 
     def _get_outlier_samples(self, dimension):
         outlier_samples = \
-            self.OUTLIERS_RANGE * np.random.rand(self.outliers_num, dimension)
+            (2 * self.OUTLIERS_RANGE * \
+            np.random.rand(self.outliers_num, dimension)) - self.OUTLIERS_RANGE
         return outlier_samples
 
     def _get_shape_samples(self, shape):
@@ -68,7 +69,8 @@ class GroundTruthSamplesGenerator(ShapeVisitor):
         line_x1, line_y1 = line.p1[0], line.p1[1]
         line_x2, line_y2 = line.p2[0], line.p2[1]
         line_slope = (line_y1 - line_y2) / (line_x1 - line_x2)
-        random_shifts = np.random.rand(num_of_samples) * samples_range
+        random_shifts = \
+            np.random.rand(num_of_samples) * 2 * samples_range - samples_range
         samples_x = line_x1 + random_shifts
         samples_y = line_y1 + line_slope * random_shifts
         return np.stack([samples_x, samples_y], axis=1)
@@ -78,7 +80,7 @@ def parse_args():
     arguments = docopt(__doc__)
     config_path = arguments["<config_path>"]
     output_path = arguments["<output_path>"]
-    debug = arguments.get("debug", False)
+    debug = arguments["--debug"]
     config_path = path.abspath(config_path)
     validate_file_path(config_path)
     output_path = path.abspath(output_path)
@@ -107,6 +109,10 @@ def main():
     config_path, output_path, debug = parse_args()
     samples_suit = generate_shapes_and_samples(config_path)
     save_shapes_and_samples(samples_suit, output_path)
+
+    if debug:
+        for samples in samples_suit:
+            samples.plot()
 
 
 if __name__ == '__main__':

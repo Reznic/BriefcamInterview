@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 import numpy as np
 import pickle
+import matplotlib.pyplot as plt
 
 
 class Shape(ABC):
@@ -30,7 +31,7 @@ class Line2D(Shape):
         self.p2 = np.random.rand(self.DIMENSION)
 
     def plot(self, canvas):
-        raise NotImplementedError()
+        canvas.axline(self.p1, self.p2)
 
 
 class ShapeFactory:
@@ -60,9 +61,10 @@ class ShapeSamples:
         self.shape = shape
         self.samples = samples
 
-    def plot(self, canvas):
-        self.shape.plot(canvas)
-        canvas.scatter(self.samples)
+    def plot(self, canvas=None):
+        self.shape.plot(plt)
+        plt.scatter(x=self.samples.T[0], y=self.samples.T[1], s=1, c="red")
+        plt.show()
 
 
 class SamplesSuit:
@@ -72,6 +74,7 @@ class SamplesSuit:
 
     def add(self, samples: ShapeSamples):
         self._suit[self.next_id] = samples
+        self.next_id += 1
 
     def get_shapes(self):
         return self._suit.values()
@@ -82,6 +85,9 @@ class SamplesSuit:
     @staticmethod
     def load_from_file(in_file):
         return pickle.load(in_file)
+
+    def __iter__(self):
+        return iter(self._suit.values())
 
 
 class ShapeVisitor(ABC):
