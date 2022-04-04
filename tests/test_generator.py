@@ -1,4 +1,3 @@
-import pytest
 import numpy as np
 
 from shapes import Line2D
@@ -19,13 +18,22 @@ def test_ground_truth_samples_of_line2d():
     line.p1 = np.array([1, line_func(1)])
     line.p2 = np.array([2, line_func(2)])
 
-    ground_truth_generator = GroundTruthSamplesGenerator()
-    gt_sample = line.accept(ground_truth_generator)
-    assert len(gt_sample) == 2, \
-        "Ground truth generator returned sample of wrong dimension"
-    sample_x = gt_sample[0]
-    sample_y = gt_sample[1]
+    num_of_sampels = 5
 
-    assert sample_y == line_func(sample_x), \
-        "Ground truth generator returned a point not on the line function"
+    ground_truth_generator = GroundTruthSamplesGenerator()
+    gt_samples = line.accept(ground_truth_generator,
+                             num_of_samples=num_of_sampels,
+                             samples_range=100)
+
+    assert len(gt_samples) == num_of_sampels, \
+        "Ground truth generator generated wrong number of samples"
+    for sample in gt_samples:
+        assert len(sample) == 2, \
+            "Ground truth generator returned sample of wrong dimension"
+        sample_x = sample[0]
+        sample_y = sample[1]
+
+        assert sample_y == line_func(sample_x), \
+            f"Ground truth generator returned a point " \
+            f"{sample} not on the line function"
 

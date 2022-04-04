@@ -19,7 +19,8 @@ from configs import Configurations
 
 class Generator:
     INLIERS_RATIO = 0.8
-    OUTLIERS_RANGE = 100
+    OUTLIERS_RANGE = 1000
+    INLIERS_RANGE = 1000
 
     def __init__(self, config):
         self.shape_factory = ShapeFactory()
@@ -29,15 +30,17 @@ class Generator:
         outliers_ratio = 1 - self.INLIERS_RATIO
         self.outliers_num = int(self.config.num_points * outliers_ratio)
 
-    def _get_gaussian_noise(self, dimension):
-        # Todo: implement
-        return np.zeros(dimension)
+    def _get_gaussian_noise(self, dimension, num, stddev):
+        return np.random.rand(num, dimension) * stddev
 
     def _get_inlier_samples(self, shape):
-        inlier_sample = shape.accept(self.ground_truth_generator)
-        noisy_inlier_sample = \
-            inlier_sample + self._get_gaussian_noise(shape.DIMENSION)
-        return noisy_inlier_sample
+        inlier_samples = shape.accept(self.ground_truth_generator,
+                                      num_of_samples=self.inliers_num,
+                                      samples_range=self.INLIERS_RANGE)
+        noise = self._get_gaussian_noise(shape.DIMENSION, self.inliers_num,
+                                         stddev=self.config.randomness)
+        noisy_inlier_samples = inlier_samples + noise
+        return noisy_inlier_samples
 
     def _get_outlier_samples(self, dimension):
         outlier_samples = \
@@ -47,7 +50,7 @@ class Generator:
     def _get_shape_samples(self, shape):
         outlier_samples = self._get_outlier_samples(shape.DIMENSION)
         inlier_samples = self._get_inlier_samples(shape)
-        samples = outlier_samples + inlier_samples
+        samples = np.concatenate([outlier_samples, inlier_samples])
         return ShapeSamples(shape, samples)
 
     def generate_samples_suit(self):
@@ -61,9 +64,14 @@ class Generator:
 
 
 class GroundTruthSamplesGenerator(ShapeVisitor):
-    def visit_line2d(self, shape: Line2D, *args, **kwargs):
-        # Todo: Implement
-        return np.zeros(2)
+    def visit_line2d(self, line: Line2D, num_of_samples, samples_range):
+        line_x1, line_y1 = line.p1[0], line.p1[1]
+        line_x2, line_y2 = line.p2[0], line.p2[1]
+        line_slope = (line_y1 - line_y2) / (line_x1 - line_x2)
+        random_shifts = np.random.rand(num_of_samples) * samples_range
+        samples_x = line_x1 + random_shifts
+        samples_y = line_y1 + line_slope * random_shifts
+        return np.stack([samples_x, samples_y], axis=1)
 
 
 def parse_args():
