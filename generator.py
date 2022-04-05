@@ -18,6 +18,9 @@ from configs import Configurations
 
 
 class Generator:
+    """Generates random shapes, and random point samples (inlier and outlier)
+    on perimeter of each shape.
+    """
     INLIERS_RATIO = 0.8
     OUTLIERS_RANGE = 1000
     INLIERS_RANGE = 1000
@@ -65,17 +68,37 @@ class Generator:
 
 
 class GroundTruthSamplesGenerator(ShapeOperation):
-    """Generate random sample points on the perimeter of the given shape."""
+    """Generate random sample points on the perimeter of the given shape.
 
+    Implements shape operation - Visitor of Shape type.
+
+    Arguments:
+        shape: Shape. to generate samples on it's perimeter.
+        num_of_sampels: int.
+        samples_range: int. maximal absolute value for each sample coordinate.
+    """
     def visit_line2d(self, line: Line2D, num_of_samples, samples_range):
-        line_x1, line_y1 = line.p1[0], line.p1[1]
-        line_x2, line_y2 = line.p2[0], line.p2[1]
-        line_slope = (line_y1 - line_y2) / (line_x1 - line_x2)
-        random_shifts = np.random.uniform(-samples_range, samples_range,
+        line_slope = self._get_line2d_slope(line)
+        samples_range = self._calc_max_x_range_for_line_samples(samples_range,
+                                                                line_slope)
+
+        rand_x_shifts = np.random.uniform(-samples_range, samples_range,
                                           num_of_samples)
-        samples_x = line_x1 + random_shifts
-        samples_y = line_y1 + line_slope * random_shifts
+        samples_x = line.x1 + rand_x_shifts
+        samples_y = line.y1 + line_slope * rand_x_shifts
         return np.stack([samples_x, samples_y], axis=1)
+
+    @staticmethod
+    def _get_line2d_slope(line):
+        line_slope = (line.y1 - line.y2) / (line.x1 - line.x2)
+        return line_slope
+
+    @staticmethod
+    def _calc_max_x_range_for_line_samples(max_range, line_slope):
+        if abs(line_slope) > 1:
+            return max_range / abs(line_slope)
+        else:
+            return max_range
 
 
 def parse_args():

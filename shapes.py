@@ -33,6 +33,22 @@ class Line2D(Shape):
     def plot(self, canvas):
         canvas.axline(self.p1, self.p2)
 
+    @property
+    def x1(self):
+        return self.p1[0]
+
+    @property
+    def x2(self):
+        return self.p2[0]
+
+    @property
+    def y1(self):
+        return self.p1[1]
+
+    @property
+    def y2(self):
+        return self.p2[1]
+
 
 class ShapeFactory:
     SHAPE_NAME_TO_CLASS = {
