@@ -14,6 +14,9 @@ class Shape(ABC):
     def randomize(self):
         raise NotImplementedError()
 
+    def __str__(self):
+        return self.__class__.__name__
+
     def plot(self, canvas):
         raise NotImplementedError()
 
@@ -48,6 +51,14 @@ class Line2D(Shape):
     @property
     def y2(self):
         return self.p2[1]
+
+    def get_slope(self):
+        dx = self.x1 - self.x2
+        if dx == 0:
+            return None
+        else:
+            dy = self.y1 - self.y2
+            return dy / dx
 
 
 class ShapeFactory:

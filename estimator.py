@@ -45,21 +45,22 @@ class Estimator:
         best_candidate = None
         best_score = 0
 
-        for candidate in candidate_shapes:
+        for candidate_class in candidate_shapes:
             try:
                 estimated_shape, score = \
-                    self.algorithm.estimate(samples, candidate)
+                    self.algorithm.estimate(samples, candidate_class)
                 if score > best_score:
                     best_score = score
-                    best_candidate = candidate
+                    best_candidate = estimated_shape
 
             except BaseException as e:
-                self.log.error(f"Failed to try estimation of {candidate} "
-                               f"for samples_id={samples_id}")
+                self.log.error(f"Failed to try estimation of "
+                               f"{candidate_class.__name__} for "
+                               f"samples_id={samples_id}")
                 self.log.exception(e)
 
         self.log.info(f"Estimated {best_candidate} shape "
-                      f"with score={score} for samples_id={samples_id}")
+                      f"with score={best_score} for samples_id={samples_id}")
 
         return best_candidate
 

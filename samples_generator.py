@@ -11,7 +11,7 @@ class ShapeSamples:
         self.shape = shape
         self.samples = samples
 
-    def plot(self, canvas=None):
+    def plot(self):
         self.shape.plot(plt)
         plt.scatter(x=self.samples.T[0], y=self.samples.T[1], s=1, c="red")
         plt.show()
@@ -56,7 +56,7 @@ class Generator:
     """Generates random shape-samples: Both noisy-inlier and outlier
     sample points on perimeters of random shapes.
     """
-    INLIERS_RATIO = 0.8
+    INLIERS_RATIO = 0.7
     OUTLIERS_RANGE = 1000
     INLIERS_RANGE = 1000
 
@@ -118,24 +118,28 @@ class GroundTruthSamplesGenerator(ShapeOperation):
         samples_range: int. maximal absolute value for each sample coordinate.
     """
     def visit_line2d(self, line, num_of_samples, samples_range):
-        line_slope = self._get_line2d_slope(line)
-        samples_range = self._calc_max_x_range_for_line_samples(samples_range,
-                                                                line_slope)
+        """Generate points on the given line"""
+        line_slope = line.get_slope()
+        samples_range = self._calc_max_range_for_line_samples(samples_range,
+                                                              line_slope)
+        rand_offsets = np.random.uniform(-samples_range, samples_range,
+                                         num_of_samples)
 
-        rand_x_shifts = np.random.uniform(-samples_range, samples_range,
-                                          num_of_samples)
-        samples_x = line.x1 + rand_x_shifts
-        samples_y = line.y1 + line_slope * rand_x_shifts
+        if line_slope is not None:
+            samples_x = line.x1 + rand_offsets
+            samples_y = line.y1 + line_slope * rand_offsets
+
+        else:
+            # Line perpendicular to y axis
+            samples_y = rand_offsets
+            samples_x = np.zeros(num_of_samples) + line.x1
+
         return np.stack([samples_x, samples_y], axis=1)
 
-    @staticmethod
-    def _get_line2d_slope(line):
-        line_slope = (line.y1 - line.y2) / (line.x1 - line.x2)
-        return line_slope
 
     @staticmethod
-    def _calc_max_x_range_for_line_samples(max_range, line_slope):
-        if abs(line_slope) > 1:
+    def _calc_max_range_for_line_samples(max_range, line_slope):
+        if line_slope is not None and abs(line_slope) > 1:
             return max_range / abs(line_slope)
         else:
             return max_range
