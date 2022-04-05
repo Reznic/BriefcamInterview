@@ -1,6 +1,8 @@
 from abc import ABC, abstractmethod
 import numpy as np
 
+from utils import get_subclasses
+
 
 class Shape(ABC):
     DIMENSION = NotImplemented
@@ -49,17 +51,20 @@ class Line2D(Shape):
 
 
 class ShapeFactory:
-    SHAPE_NAME_TO_CLASS = {
-        "Line2D": Line2D,
-    }
+    def __init__(self):
+        self.shapes_name_to_class = self._find_all_shape_classes()
+
+    def _find_all_shape_classes(self):
+        shapes = list(get_subclasses(Shape))
+        return {shape.__name__: shape for shape in shapes}
 
     def _get_shape(self, shape_name: str):
-        if shape_name not in self.SHAPE_NAME_TO_CLASS:
+        if shape_name not in self.shapes_name_to_class:
             raise InvalidShapeError(f"Could not find {shape_name} shape")
-        shape_class = self.SHAPE_NAME_TO_CLASS[shape_name]
+        shape_class = self.shapes_name_to_class[shape_name]
         return shape_class()
 
-    def get_random_shapes(self, shape_amounts: dict):
+    def generate_random_shapes(self, shape_amounts: dict):
         shapes = []
         for shape_name, amount in shape_amounts.items():
             for _ in range(amount):
@@ -68,6 +73,10 @@ class ShapeFactory:
                 shapes.append(shape)
 
         return shapes
+
+    def get_all_shapes_of_dimension(self, dimension: int):
+        return [shape for shape in self.shapes_name_to_class.values()
+                if shape.DIMENSION == dimension]
 
 
 class ShapeOperation(ABC):

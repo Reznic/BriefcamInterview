@@ -74,7 +74,7 @@ class Generator:
         self.log.info(f"{self.outliers_num} outlier and "
                       f"{self.inliers_num} inlier samples, "
                       f"with {self.config.randomness} noise deviation")
-        shapes = self.shape_factory.get_random_shapes(self.config.shapes)
+        shapes = self.shape_factory.generate_random_shapes(self.config.shapes)
         suit = SamplesSuit()
         for shape in shapes:
             samples = self._get_shape_samples(shape)
