@@ -12,7 +12,7 @@ from os import path
 
 from docopt import docopt
 
-from samples import Generator
+from samples_generator import Generator
 from configs import Configurations
 from utils import validate_file_path, init_logger
 
