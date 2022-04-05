@@ -97,12 +97,19 @@ class SamplesSuit:
             samples.plot()
 
 
-class ShapeVisitor(ABC):
+class ShapeOperation(ABC):
+    """Represent abstract operation on shapes. (Abstract visitor for Shape)."""
     def visit(self, shape: Shape, *args, **kwargs):
+        visit_method = self._fetch_visit_method(shape)
+        return visit_method(shape, *args, **kwargs)
+
+    def _fetch_visit_method(self, shape):
         shape_class = shape.__class__.__name__.lower()
         method_name = f"visit_{shape_class}"
-        visit_method = self.__getattribute__(method_name)
-        return visit_method(shape, *args, **kwargs)
+        if not hasattr(self, method_name):
+            raise ShapeOperationNotImplementedError(self, shape)
+        else:
+            return self.__getattribute__(method_name)
 
     @abstractmethod
     def visit_line2d(self, shape: Line2D, *args, **kwargs):

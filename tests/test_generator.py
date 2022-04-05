@@ -5,6 +5,10 @@ from generator import Generator, GroundTruthSamplesGenerator
 from configs import Configurations
 
 
+# Make tests deterministic
+np.random.seed(3246)
+
+
 def test_ground_truth_samples_of_line2d():
     """Test that ground truth generator, can generate sample points on a 2d line.
 
@@ -53,7 +57,15 @@ def test_generator():
         f"Generator generated {suit.len} " \
         f"shapes instead of {expected_total_shapes}"
 
+    expected_samples_range = max(generator.INLIERS_RANGE,
+                                 generator.OUTLIERS_RANGE)
     for shape_samples in suit:
-        assert len(shape_samples.samples) == config.num_points, \
-            "Wrong number of generated samples"
+        expected_samples_dimension = (config.num_points,
+                                      shape_samples.shape.DIMENSION)
+        assert shape_samples.samples.shape == expected_samples_dimension, \
+            "Samples with wrong dimension generated"
+
+        samples_range = np.max(np.abs(shape_samples.samples))
+        assert samples_range <= expected_samples_range, \
+            "Generated samples exceeded the expected range"
 

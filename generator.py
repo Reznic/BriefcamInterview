@@ -13,7 +13,7 @@ from os import path
 import numpy as np
 
 from utils import validate_file_path
-from shapes import ShapeFactory, ShapeVisitor, Line2D, ShapeSamples, SamplesSuit
+from shapes import ShapeFactory, ShapeOperation, Line2D, ShapeSamples, SamplesSuit
 from configs import Configurations
 
 
@@ -43,9 +43,9 @@ class Generator:
         return noisy_inlier_samples
 
     def _get_outlier_samples(self, dimension):
-        outlier_samples = \
-            (2 * self.OUTLIERS_RANGE * \
-            np.random.rand(self.outliers_num, dimension)) - self.OUTLIERS_RANGE
+        size = (self.outliers_num, dimension)
+        samples_range = (-self.OUTLIERS_RANGE, self.OUTLIERS_RANGE)
+        outlier_samples = np.random.uniform(*samples_range, size)
         return outlier_samples
 
     def _get_shape_samples(self, shape):
@@ -64,13 +64,15 @@ class Generator:
         return suit
 
 
-class GroundTruthSamplesGenerator(ShapeVisitor):
+class GroundTruthSamplesGenerator(ShapeOperation):
+    """Generate random sample points on the perimeter of the given shape."""
+
     def visit_line2d(self, line: Line2D, num_of_samples, samples_range):
         line_x1, line_y1 = line.p1[0], line.p1[1]
         line_x2, line_y2 = line.p2[0], line.p2[1]
         line_slope = (line_y1 - line_y2) / (line_x1 - line_x2)
-        random_shifts = \
-            np.random.rand(num_of_samples) * 2 * samples_range - samples_range
+        random_shifts = np.random.uniform(-samples_range, samples_range,
+                                          num_of_samples)
         samples_x = line_x1 + random_shifts
         samples_y = line_y1 + line_slope * random_shifts
         return np.stack([samples_x, samples_y], axis=1)
