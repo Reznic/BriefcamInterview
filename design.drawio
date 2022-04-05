@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-04-05T06:51:32.150Z" agent="5.0 (X11)" etag="E0eToYIOGXCUyOhaO628" version="17.4.0" type="github">
+<mxfile host="app.diagrams.net" modified="2022-04-05T10:54:06.899Z" agent="5.0 (X11)" etag="e_LKXmVA_7_hU5vHqh_L" version="17.4.0" type="github">
   <diagram name="Page-1" id="c4acf3e9-155e-7222-9cf6-157b1a14988f">
-    <mxGraphModel dx="3822" dy="1160" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2809" dy="619" grid="1" gridSize="12" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="413" pageHeight="583" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -131,7 +131,7 @@
           <mxGeometry y="68" width="221" height="40" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-29" value="SamplesSuit" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="-1365" y="1716" width="237" height="108" as="geometry" />
+          <mxGeometry x="-1365" y="1716" width="237" height="132" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-30" value="shape_data: dict&lt;id, ShapeSamples&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-29" vertex="1">
           <mxGeometry y="26" width="237" height="26" as="geometry" />
@@ -139,8 +139,8 @@
         <mxCell id="UJlKaWdvmAagKJ9E7w59-31" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-29" vertex="1">
           <mxGeometry y="52" width="237" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-32" value="+ save_to_file(file): void&#xa;+ load_from_file(file): void&#xa;+ plot(): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-29" vertex="1">
-          <mxGeometry y="60" width="237" height="48" as="geometry" />
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-32" value="+ save_to_file(file): void&#xa;+ load_from_file(file): void&#xa;+ plot(): void&#xa;+ delete_shape_params(): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-29" vertex="1">
+          <mxGeometry y="60" width="237" height="72" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-33" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.552;exitY=1.109;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="UJlKaWdvmAagKJ9E7w59-28" target="UJlKaWdvmAagKJ9E7w59-29" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -181,34 +181,22 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-53" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Estimator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- samples_suit: SamplesSuit&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- algorithm: &lt;b&gt;RansacEstimator&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- estimations: SamplesSuitEstimations&lt;br&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__(SamplesSuit): Estimator&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ estimate(): SamplesSuitEstimations&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
-          <mxGeometry x="329" y="1716" width="247" height="120" as="geometry" />
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-53" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;Estimator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- samples_suit: SamplesSuit&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- algorithm: &lt;b&gt;RansacEstimator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ __init__(samples_suit, algo): Estimator&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ estimate(): SamplesSuit&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
+          <mxGeometry x="329" y="1716" width="259" height="120" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-56" value="&lt;p style=&quot;margin: 0px ; margin-top: 4px ; text-align: center&quot;&gt;&lt;b&gt;RansacEstimator&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;-distance_to_point: &lt;i&gt;DistanceToPoint&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-shape_fitter: ShapeFitter&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-shape_regressor: ShapeRegressor&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-candidates_scores: dict&amp;lt;Shape, float&amp;gt;&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;-shape_factory: ShapesFactory&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;i&gt;&lt;br&gt;&lt;/i&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot;&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;+ estimate_shape(list&amp;lt;Vector&amp;gt;): Shape&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- init_candidate_shapes(dimension: float): void&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- ransac(list&amp;lt;Vector&amp;gt;, Shape): float&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- find_near_samples(Shape, list&amp;lt;Vector&amp;gt;): list&amp;lt;Vector&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;- get_fitting_score(Shape, list&amp;lt;Vector&amp;gt;): float&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px ; margin-left: 4px&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=0;shadow=0;comic=0;labelBackgroundColor=none;strokeWidth=1" parent="1" vertex="1">
           <mxGeometry x="316" y="1416" width="353" height="216" as="geometry" />
         </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-57" value="SamplesSuitEstimations" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
-          <mxGeometry x="768.5" y="1716" width="237" height="108" as="geometry" />
-        </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-58" value="shape_data: dict&lt;id, Shape&gt;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-57" vertex="1">
-          <mxGeometry y="26" width="237" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-59" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-57" vertex="1">
-          <mxGeometry y="52" width="237" height="8" as="geometry" />
-        </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-60" value="+ save_to_file(file): void&#xa;+ load_from_file(file): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-57" vertex="1">
-          <mxGeometry y="60" width="237" height="48" as="geometry" />
-        </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-62" value="EstimatorTester" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="1" vertex="1">
           <mxGeometry x="975" y="2004" width="330" height="156" as="geometry" />
         </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-63" value="+ estimations: SamplesSuitEstimations&#xa;+ ground_truth: SamplesSuit&#xa;+ estimation_distances: dict&lt;id, float&gt;&#xa;- distance_to_shape: DistanceToShape&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-62" vertex="1">
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-63" value="+ estimations: SamplesSuit&#xa;+ ground_truth: SamplesSuit&#xa;+ estimation_distances: dict&lt;id, float&gt;&#xa;- distance_to_shape: DistanceToShape&#xa;&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-62" vertex="1">
           <mxGeometry y="26" width="330" height="70" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-64" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-62" vertex="1">
           <mxGeometry y="96" width="330" height="8" as="geometry" />
         </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-65" value="+ __init__(SamplesSuit, SamplesSuitEstimations)&#xa;+ evaluate(): float&#xa;+ plot(canvas): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-62" vertex="1">
+        <mxCell id="UJlKaWdvmAagKJ9E7w59-65" value="+ __init__(SamplesSuit, SamplesSuit)&#xa;+ evaluate(): float&#xa;+ plot(canvas): void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="UJlKaWdvmAagKJ9E7w59-62" vertex="1">
           <mxGeometry y="104" width="330" height="52" as="geometry" />
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-67" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" parent="1" source="0LW8psPkYJi9jbIiEvqm-6" edge="1" target="5d2195bd80daf111-18">
@@ -295,36 +283,10 @@
             <mxPoint x="-619" y="1584" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-83" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;labelBackgroundColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;strokeColor=default;shape=connector;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.998;entryY=0.411;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="5d2195bd80daf111-18" target="UJlKaWdvmAagKJ9E7w59-59" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="708" y="1524" as="sourcePoint" />
-            <mxPoint x="876" y="1774" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="1620" y="168" />
-              <mxPoint x="1608" y="1774" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-84" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;labelBackgroundColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;strokeColor=default;shape=connector;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" target="UJlKaWdvmAagKJ9E7w59-53" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="453" y="1632" as="sourcePoint" />
             <mxPoint x="700" y="1572" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-85" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;labelBackgroundColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;strokeColor=default;shape=connector;exitX=-0.004;exitY=1.244;exitDx=0;exitDy=0;exitPerimeter=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="UJlKaWdvmAagKJ9E7w59-58" target="UJlKaWdvmAagKJ9E7w59-53" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="540" y="1608" as="sourcePoint" />
-            <mxPoint x="700" y="1608" as="targetPoint" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="UJlKaWdvmAagKJ9E7w59-87" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;labelBackgroundColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;strokeColor=default;shape=connector;exitX=0.5;exitY=0.993;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="UJlKaWdvmAagKJ9E7w59-60" edge="1">
-          <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="960" y="1632" as="sourcePoint" />
-            <mxPoint x="1104" y="2004" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="887" y="1872" />
-              <mxPoint x="1104" y="1872" />
-            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-89" value="" style="endArrow=diamondThin;endFill=0;endSize=24;html=1;rounded=0;labelBackgroundColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;strokeColor=default;shape=connector;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="5d2195bd80daf111-18" target="UJlKaWdvmAagKJ9E7w59-17" edge="1">
@@ -338,7 +300,7 @@
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-91" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;labelBackgroundColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;strokeColor=default;shape=connector;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" target="UJlKaWdvmAagKJ9E7w59-63" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="-1260" y="1824" as="sourcePoint" />
+            <mxPoint x="-1260" y="1848" as="sourcePoint" />
             <mxPoint x="-404" y="2028" as="targetPoint" />
             <Array as="points">
               <mxPoint x="-1260" y="2052" />
@@ -347,7 +309,7 @@
         </mxCell>
         <mxCell id="UJlKaWdvmAagKJ9E7w59-92" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;labelBackgroundColor=default;fontFamily=Helvetica;fontSize=11;fontColor=default;strokeColor=default;shape=connector;entryX=0.372;entryY=1.008;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" target="UJlKaWdvmAagKJ9E7w59-53" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="-1224" y="1824" as="sourcePoint" />
+            <mxPoint x="-1224" y="1848" as="sourcePoint" />
             <mxPoint x="-692" y="1872" as="targetPoint" />
             <Array as="points">
               <mxPoint x="-1224" y="1932" />
