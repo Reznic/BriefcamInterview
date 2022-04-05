@@ -1,7 +1,5 @@
 from abc import ABC, abstractmethod
 import numpy as np
-import pickle
-import matplotlib.pyplot as plt
 
 
 class Shape(ABC):
@@ -70,47 +68,6 @@ class ShapeFactory:
                 shapes.append(shape)
 
         return shapes
-
-
-class ShapeSamples:
-    def __init__(self, shape, samples):
-        self.shape = shape
-        self.samples = samples
-
-    def plot(self, canvas=None):
-        self.shape.plot(plt)
-        plt.scatter(x=self.samples.T[0], y=self.samples.T[1], s=1, c="red")
-        plt.show()
-
-
-class SamplesSuit:
-    def __init__(self):
-        self.len = 0
-        self._suit = {}
-
-    def add(self, samples: ShapeSamples):
-        self._suit[self.len] = samples
-        self.len += 1
-
-    def __len__(self):
-        return self.len
-
-    def get_shapes(self):
-        return self._suit.values()
-
-    def save_to_file(self, out_file):
-        pickle.dump(self, out_file)
-
-    @staticmethod
-    def load_from_file(in_file):
-        return pickle.load(in_file)
-
-    def __iter__(self):
-        return iter(self._suit.values())
-
-    def plot(self):
-        for samples in self:
-            samples.plot()
 
 
 class ShapeOperation(ABC):

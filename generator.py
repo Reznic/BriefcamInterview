@@ -10,95 +10,10 @@ Options:
 """
 from docopt import docopt
 from os import path
-import numpy as np
 
-from utils import validate_file_path
-from shapes import ShapeFactory, ShapeOperation, Line2D, ShapeSamples, SamplesSuit
+from samples import Generator
 from configs import Configurations
-
-
-class Generator:
-    """Generates random shapes, and random point samples (inlier and outlier)
-    on perimeter of each shape.
-    """
-    INLIERS_RATIO = 0.8
-    OUTLIERS_RANGE = 1000
-    INLIERS_RANGE = 1000
-
-    def __init__(self, config):
-        self.shape_factory = ShapeFactory()
-        self.config = config
-        self.ground_truth_generator = GroundTruthSamplesGenerator()
-        self.inliers_num = round(self.config.num_points * self.INLIERS_RATIO)
-        outliers_ratio = 1 - self.INLIERS_RATIO
-        self.outliers_num = round(self.config.num_points * outliers_ratio)
-
-    def _get_gaussian_noise(self, dimension, num, stddev):
-        return np.random.randn(num, dimension) * stddev
-
-    def _get_inlier_samples(self, shape):
-        inlier_samples = shape.accept(self.ground_truth_generator,
-                                      num_of_samples=self.inliers_num,
-                                      samples_range=self.INLIERS_RANGE)
-        noise = self._get_gaussian_noise(shape.DIMENSION, self.inliers_num,
-                                         stddev=self.config.randomness)
-        noisy_inlier_samples = inlier_samples + noise
-        return noisy_inlier_samples
-
-    def _get_outlier_samples(self, dimension):
-        size = (self.outliers_num, dimension)
-        samples_range = (-self.OUTLIERS_RANGE, self.OUTLIERS_RANGE)
-        outlier_samples = np.random.uniform(*samples_range, size)
-        return outlier_samples
-
-    def _get_shape_samples(self, shape):
-        outlier_samples = self._get_outlier_samples(shape.DIMENSION)
-        inlier_samples = self._get_inlier_samples(shape)
-        samples = np.concatenate([outlier_samples, inlier_samples])
-        return ShapeSamples(shape, samples)
-
-    def generate_samples_suit(self):
-        shapes = self.shape_factory.get_random_shapes(self.config.shapes)
-        suit = SamplesSuit()
-        for shape in shapes:
-            samples = self._get_shape_samples(shape)
-            suit.add(samples)
-
-        return suit
-
-
-class GroundTruthSamplesGenerator(ShapeOperation):
-    """Generate random sample points on the perimeter of the given shape.
-
-    Implements shape operation - Visitor of Shape type.
-
-    Arguments:
-        shape: Shape. to generate samples on it's perimeter.
-        num_of_sampels: int.
-        samples_range: int. maximal absolute value for each sample coordinate.
-    """
-    def visit_line2d(self, line: Line2D, num_of_samples, samples_range):
-        line_slope = self._get_line2d_slope(line)
-        samples_range = self._calc_max_x_range_for_line_samples(samples_range,
-                                                                line_slope)
-
-        rand_x_shifts = np.random.uniform(-samples_range, samples_range,
-                                          num_of_samples)
-        samples_x = line.x1 + rand_x_shifts
-        samples_y = line.y1 + line_slope * rand_x_shifts
-        return np.stack([samples_x, samples_y], axis=1)
-
-    @staticmethod
-    def _get_line2d_slope(line):
-        line_slope = (line.y1 - line.y2) / (line.x1 - line.x2)
-        return line_slope
-
-    @staticmethod
-    def _calc_max_x_range_for_line_samples(max_range, line_slope):
-        if abs(line_slope) > 1:
-            return max_range / abs(line_slope)
-        else:
-            return max_range
+from utils import validate_file_path
 
 
 def parse_args():

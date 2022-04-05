@@ -4,7 +4,7 @@ from pytest import approx
 
 from shapes import Line2D
 from configs import Configurations
-from generator import Generator, GroundTruthSamplesGenerator
+from samples import Generator, GroundTruthSamplesGenerator
 
 
 # Make tests deterministic
