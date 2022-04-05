@@ -14,7 +14,7 @@ def test_distance_to_point_line2d():
     validate_correct_distances(line, points, expected_distances)
 
 
-def test_distance_to_point_on_line2d():
+def test_distance_to_points_on_line2d():
     line = Line2D()
     line.p1 = np.array([-27.06051402, 231.66345089])
     line.p2 = np.array([78.06731383, -662.76207316])

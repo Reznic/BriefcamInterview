@@ -1,4 +1,4 @@
-"""Utility functions"""
+"""Utility functions module."""
 from os.path import isfile
 
 import logging
@@ -19,6 +19,7 @@ def init_logger(name, debug_mode):
         logger.setLevel(logging.INFO)
 
     return logger
+
 
 def get_subclasses(base_class):
     for subclass in base_class.__subclasses__():

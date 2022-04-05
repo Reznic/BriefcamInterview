@@ -20,6 +20,7 @@ from utils import validate_file_path, init_logger
 
 
 class Estimator:
+    """Estimate shapes from suit of noisy data points."""
     def __init__(self, estimation_algorithm):
         self.log = logging.getLogger("Estimator")
         self.algorithm = estimation_algorithm
@@ -68,13 +69,14 @@ class Estimator:
         dimension = samples.shape[1]
         candidates = self.shape_factory.get_all_shapes_of_dimension(dimension)
         if len(candidates) == 0:
-            raise DimensionNotSupported(f"No supported estimations of "
-                                        f"{dimension}-dimension shapes. "
-                                        f"Could not estimate given sample data")
+            raise DimensionNotSupportedError(f"No supported estimations of "
+                                             f"{dimension}-dimension shapes. "
+                                             f"Could not estimate given sample "
+                                             f"data")
         return candidates
 
 
-class DimensionNotSupported(BaseException):
+class DimensionNotSupportedError(BaseException):
     pass
 
 
@@ -101,8 +103,13 @@ def load_samples(log, input_path):
         log.exception(e)
         exit()
 
-    samples_suit.delete_shape_params()
     return samples_suit
+
+
+def run_estimations(samples_suit):
+    ransac = RansacEstimator()
+    estimator = Estimator(ransac)
+    estimator.estimate_suit(samples_suit)
 
 
 def save_estimations(log, suit, output_path):
@@ -121,11 +128,12 @@ def main():
 
     samples_suit = load_samples(log, input_path)
 
-    log.info(f"Estimating samples suit")
-    ransac = RansacEstimator()
-    estimator = Estimator(ransac)
-    estimator.estimate_suit(samples_suit)
+    # Do not pass the correct shapes data to the estimator.
+    # Keep only the noisy samples
+    samples_suit.delete_shape_params()
 
+    log.info(f"Estimating samples suit")
+    run_estimations(samples_suit)
     save_estimations(log, samples_suit, output_path)
 
     if debug_mode:

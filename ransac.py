@@ -1,13 +1,14 @@
-"""Random sample concensus algorithm implementation."""
+"""Random sample consensus algorithm implementation."""
 import numpy as np
 from math import cos, sin, atan
 
 from shapes import ShapeOperation
+from regression import Regressor
 
 
 class RansacEstimator:
-    """Random sample concensus shape estimator."""
-    ITERATIONS = 10000
+    """Random sample consensus shape estimator."""
+    ITERATIONS = 100
     INLIERS_THRESHOLD = 1
 
     def __init__(self):
@@ -17,22 +18,24 @@ class RansacEstimator:
 
     def estimate(self, samples: np.array, shape: type):
         sub_sample_size = shape.MIN_POINTS_FOR_FITTING
-
         best_shape = None
         best_score = 0
 
         for _ in range(self.ITERATIONS):
             current_shape = shape()
-            sub_sample = self.get_sub_sample(samples, sub_sample_size)
+            sub_sample = self._get_sub_sample(samples, sub_sample_size)
             is_fitted = current_shape.accept(self.shape_fitter, sub_sample)
+
             if not is_fitted:
+                # Could not fit shape to sub-sample. retry sub sampling
                 continue
 
-            inliers = self.find_inliers(current_shape, samples)
+            inliers = self._find_inliers(current_shape, samples)
             # Improve shape estimation by Regression on found inliers
             current_shape.accept(self.regressor, inliers)
 
-            inliers_after_regression = self.find_inliers(current_shape, samples)
+            inliers_after_regression = self._find_inliers(current_shape,
+                                                          samples)
             score = len(inliers_after_regression)
 
             if score >= best_score:
@@ -41,26 +44,26 @@ class RansacEstimator:
 
         return best_shape, best_score
 
-    def find_inliers(self, shape, samples):
+    def _find_inliers(self, shape, samples):
         distances = shape.accept(self.distance_to_point_measure, samples)
         inliers = samples[distances < self.INLIERS_THRESHOLD]
         return inliers
 
     @staticmethod
-    def get_sub_sample(samples, size):
+    def _get_sub_sample(samples, size):
         indices = np.random.choice(len(samples), size, replace=False)
         sub_sample = np.take(samples, indices, axis=0)
         return sub_sample
 
 
 class ShapeFitter(ShapeOperation):
-    """Generate random sample points on the perimeter of the given shape.
+    """Find percise parameters of shape that pass through points.
 
     Implements shape operation - Visitor of Shape type.
 
     Arguments:
-        shape: Shape.
-        samples: ndarray.
+        shape: Shape. Shape to fit. result parameters saved to this instance.
+        samples: ndarray. sample points to fit shape to, percisely
     """
     def visit_line2d(self, line, samples):
         if samples.shape != (2, 2) or np.array_equal(samples[0], samples[1]):
@@ -73,7 +76,7 @@ class ShapeFitter(ShapeOperation):
 
 
 class DistanceToPoint(ShapeOperation):
-    """Generate random sample points on the perimeter of the given shape.
+    """Measure the shortest distance between given point/s and a shape.
 
     Implements shape operation - Visitor of Shape type.
 
@@ -106,23 +109,4 @@ class DistanceToPoint(ShapeOperation):
         return np.array([[cos(angle), -sin(angle)],
                          [sin(angle), cos(angle)]])
 
-
-class Regressor(ShapeOperation):
-    """Generate random sample points on the perimeter of the given shape.
-
-    Implements shape operation - Visitor of Shape type.
-
-    Arguments:
-        shape: Shape.
-        samples: ndarray.
-    """
-    def visit_line2d(self, line, points):
-        """Perform Least-Squares on given points, and save result in given line."""
-        points_x = points.T[0]
-        points_y = points.T[1]
-        A = np.vstack([points_x, np.ones(len(points_x))]).T
-        m, c = np.linalg.lstsq(A, points_y, rcond=None)[0]
-
-        line.p1 = np.array([1, m+c])
-        line.p2 = np.array([2, 2*m+c])
 

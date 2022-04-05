@@ -1,11 +1,13 @@
+"""Unittests for regression module."""
 import numpy as np
 from pytest import approx
 
 from shapes import Line2D
-from ransac import Regressor
+from regression import Regressor
 
 
 def test_regression_line2d():
+    """Test linear fitting of noisy 2d-line samples."""
     line = Line2D()
     points = np.array([[0.01, 0], [1, 1.01], [2, 1.99]])
     expected_slope = 1
