@@ -18,6 +18,13 @@ generator.py <config_path> <output_path> [--debug]
 ```
 Use the optional --debug flag to plot the generated shapes and data.
 
+## Estimating shapes from test data, with RANSAC algorithm
+pass the output_path from the generator, as input_path for the estimator:
+```
+estimator.py <input_path> <output_path> [--debug]
+```
+Use the optional --debug flag to plot the estimated shapes and data.
+
 # Running Tests:
 ```
 python3 -m pytest
