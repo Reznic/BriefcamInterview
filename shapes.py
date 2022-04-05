@@ -69,12 +69,15 @@ class ShapeSamples:
 
 class SamplesSuit:
     def __init__(self):
-        self.next_id = 0
+        self.len = 0
         self._suit = {}
 
     def add(self, samples: ShapeSamples):
-        self._suit[self.next_id] = samples
-        self.next_id += 1
+        self._suit[self.len] = samples
+        self.len += 1
+
+    def __len__(self):
+        return self.len
 
     def get_shapes(self):
         return self._suit.values()
@@ -88,6 +91,10 @@ class SamplesSuit:
 
     def __iter__(self):
         return iter(self._suit.values())
+
+    def plot(self):
+        for samples in self:
+            samples.plot()
 
 
 class ShapeVisitor(ABC):

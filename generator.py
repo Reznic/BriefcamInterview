@@ -26,9 +26,9 @@ class Generator:
         self.shape_factory = ShapeFactory()
         self.config = config
         self.ground_truth_generator = GroundTruthSamplesGenerator()
-        self.inliers_num = int(self.config.num_points * self.INLIERS_RATIO)
+        self.inliers_num = round(self.config.num_points * self.INLIERS_RATIO)
         outliers_ratio = 1 - self.INLIERS_RATIO
-        self.outliers_num = int(self.config.num_points * outliers_ratio)
+        self.outliers_num = round(self.config.num_points * outliers_ratio)
 
     def _get_gaussian_noise(self, dimension, num, stddev):
         return np.random.randn(num, dimension) * stddev
@@ -90,8 +90,9 @@ def parse_args():
 
 def generate_shapes_and_samples(config_path):
     # Load configuration file
+    config = Configurations()
     with open(config_path, "rb") as config_file:
-        config = Configurations(config_file)
+        config.load_from_file(config_file)
 
     # Generate random shapes, and noisy point samples of them
     gen = Generator(config)
@@ -111,8 +112,7 @@ def main():
     save_shapes_and_samples(samples_suit, output_path)
 
     if debug:
-        for samples in samples_suit:
-            samples.plot()
+        samples_suit.plot()
 
 
 if __name__ == '__main__':

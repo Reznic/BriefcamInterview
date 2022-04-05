@@ -2,6 +2,7 @@ import numpy as np
 
 from shapes import Line2D
 from generator import Generator, GroundTruthSamplesGenerator
+from configs import Configurations
 
 
 def test_ground_truth_samples_of_line2d():
@@ -36,4 +37,23 @@ def test_ground_truth_samples_of_line2d():
         assert sample_y == line_func(sample_x), \
             f"Ground truth generator returned a point " \
             f"{sample} not on the line function"
+
+
+def test_generator():
+    config = Configurations()
+    config.randomness = 0
+    config.shapes = {"Line2D": 2}
+    config.num_points = 10
+
+    generator = Generator(config)
+    suit = generator.generate_samples_suit()
+
+    expected_total_shapes = sum(config.shapes.values())
+    assert suit.len == expected_total_shapes, \
+        f"Generator generated {suit.len} " \
+        f"shapes instead of {expected_total_shapes}"
+
+    for shape_samples in suit:
+        assert len(shape_samples.samples) == config.num_points, \
+            "Wrong number of generated samples"
 
