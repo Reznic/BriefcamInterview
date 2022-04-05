@@ -17,6 +17,7 @@ def init_logger(name, debug_mode):
         logger.setLevel(logging.DEBUG)
     else:
         logger.setLevel(logging.INFO)
+
     return logger
 
 def get_subclasses(base_class):

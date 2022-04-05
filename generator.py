@@ -29,11 +29,17 @@ def parse_args():
     return config_path, output_path, debug
 
 
-def generate_shapes_and_samples(config_path):
+def generate_shapes_and_samples(log, config_path):
     # Load configuration file
     config = Configurations()
-    with open(config_path, "rb") as config_file:
-        config.load_from_file(config_file)
+    try:
+        with open(config_path, "rb") as config_file:
+            config.load_from_file(config_file)
+
+    except BaseException as e:
+        log.error(f"Failed to load configurations from {config_path}")
+        log.exception(e)
+        exit()
 
     # Generate random shapes, and noisy point samples of them
     gen = Generator(config)
@@ -41,18 +47,23 @@ def generate_shapes_and_samples(config_path):
     return samples_suit
 
 
-def save_shapes_and_samples(samples_suit, output_path):
+def save_shapes_and_samples(log, samples_suit, output_path):
     # Save shapes and noisy data samples to file
-    with open(output_path, "wb") as output_file:
-        samples_suit.save_to_file(output_file)
+    try:
+        with open(output_path, "wb") as output_file:
+            samples_suit.save_to_file(output_file)
+
+    except BaseException as e:
+        log.error(f"Failed to save samples suit to {output_path}")
+        log.exception(e)
 
 
 def main():
     config_path, output_path, debug_mode = parse_args()
     log = init_logger("Generator", debug_mode)
 
-    samples_suit = generate_shapes_and_samples(config_path)
-    save_shapes_and_samples(samples_suit, output_path)
+    samples_suit = generate_shapes_and_samples(log, config_path)
+    save_shapes_and_samples(log, samples_suit, output_path)
 
     if debug_mode:
         log.debug("Plotting sample suit")
