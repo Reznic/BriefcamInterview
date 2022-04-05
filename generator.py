@@ -1,4 +1,4 @@
-"""Generation of noisy sample data for random shapes .
+"""Generation of noisy sample data for random shapes.
 
 Usage:
   generator.py <config_path> <output_path> [--debug]

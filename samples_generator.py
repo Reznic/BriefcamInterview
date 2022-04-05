@@ -32,6 +32,11 @@ class SamplesSuit:
     def get_shapes(self):
         return self._suit.values()
 
+    def delete_shape_params(self):
+        """Clear shapes data from samples suit, and leave only sample points."""
+        for shape_samples in self:
+            shape_samples.shape = None
+
     def save_to_file(self, out_file):
         pickle.dump(self, out_file)
 
