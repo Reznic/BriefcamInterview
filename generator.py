@@ -8,12 +8,13 @@ Options:
   -h --help     Show this screen.
   -d --debug       plot generated shapes and data
 """
-from docopt import docopt
 from os import path
+
+from docopt import docopt
 
 from samples import Generator
 from configs import Configurations
-from utils import validate_file_path
+from utils import validate_file_path, init_logger
 
 
 def parse_args():
@@ -47,11 +48,14 @@ def save_shapes_and_samples(samples_suit, output_path):
 
 
 def main():
-    config_path, output_path, debug = parse_args()
+    config_path, output_path, debug_mode = parse_args()
+    log = init_logger("Generator", debug_mode)
+
     samples_suit = generate_shapes_and_samples(config_path)
     save_shapes_and_samples(samples_suit, output_path)
 
-    if debug:
+    if debug_mode:
+        log.debug("Plotting sample suit")
         samples_suit.plot()
 
 

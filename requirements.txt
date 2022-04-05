@@ -4,3 +4,5 @@ matplotlib==3.5.1
 pytest==7.1.1
 pickle
 json
+logging
+coloredlogs

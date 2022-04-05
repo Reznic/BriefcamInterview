@@ -1,4 +1,5 @@
 import pickle
+import logging
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -55,6 +56,7 @@ class Generator:
     INLIERS_RANGE = 1000
 
     def __init__(self, config):
+        self.log = logging.getLogger("Generator")
         self.shape_factory = ShapeFactory()
         self.config = config
         self.ground_truth_generator = GroundTruthSamplesGenerator()
@@ -63,6 +65,10 @@ class Generator:
         self.outliers_num = round(self.config.num_points * outliers_ratio)
 
     def generate_samples_suit(self):
+        self.log.info(f"Generating random shapes: {self.config.shapes}")
+        self.log.info(f"{self.outliers_num} outlier and "
+                      f"{self.inliers_num} inlier samples, "
+                      f"with {self.config.randomness} noise deviation")
         shapes = self.shape_factory.get_random_shapes(self.config.shapes)
         suit = SamplesSuit()
         for shape in shapes:
