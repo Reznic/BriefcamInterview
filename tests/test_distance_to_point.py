@@ -1,8 +1,16 @@
-from shapes import Line2D
+from shapes import Line2D, Circle2D
 from ransac import DistanceToPoint
 from math import sqrt
 
 import numpy as np
+
+
+def validate_correct_distances(shape, points, expected_distances):
+    distance_to_point = DistanceToPoint()
+    distances = shape.accept(distance_to_point, points)
+    assert np.allclose(distances, expected_distances), \
+        f"DistanceToPoint operation returned " \
+        f"wrong distances between {shape.__class__.__name__} and test points"
 
 
 def test_distance_to_point_line2d():
@@ -32,9 +40,11 @@ def test_distance_to_point_line2d_perpendicular():
     validate_correct_distances(line, points, expected_distances)
 
 
-def validate_correct_distances(line, points, expected_distances):
-    distance_to_point = DistanceToPoint()
-    distances = line.accept(distance_to_point, points)
-    assert np.allclose(distances, expected_distances), \
-        "DistanceToPoint operation returned " \
-        "wrong distances between line and test points"
+def test_distance_to_point_circle2d():
+    circle = Circle2D()
+    circle.center = np.array([1, 0])
+    circle.radius = 3
+    points = np.array([[4, 0], [3, 0], [1, 5]])
+    expected_distances = np.array([0, 1, 2])
+    validate_correct_distances(circle, points, expected_distances)
+
