@@ -11,10 +11,9 @@ pip3 install -r requirements.txt
 
 # Usage:
 ## Generating test data samples of random shapes
-create a configuration file at <config_path> 
-(See configurations_example.json file for example)
+create a configuration file (See configurations_example.json file for example).
 
-and run:
+Run:
 ```
 generator.py <config_path> <output_path> [--debug]
 ```
