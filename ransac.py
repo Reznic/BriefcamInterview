@@ -17,6 +17,35 @@ class RansacEstimator:
         self.distance_to_point_measure = DistanceToPoint()
 
     def estimate(self, samples: np.array, shape: type):
+        """Run RANSAC on given sample points and estimate shape of given type.
+
+        Algorithm:
+
+        run in a loop for constant number of iterations :
+            1. choose a random sub sample of points from all sample points.
+                The sub sample size is the minimal points required to determine
+                the estimated shape type. for example: 2 points for 2d-Line
+            2. Try to fit shape of the estimated type, to the chosen sub sample
+                If fitting cannot be done, pick a new random sub-sample
+            3. Calculate the distance between each point, to the fitted shape.
+            4. Filter out points with a distance larger than a
+                threshold parameter. The remaining close points are the Inliers.
+            5. Find a better estimation of the fitted shape by running
+                regression on the close inliers points.
+                For example: Least-Squares algorithm on inlier points of 2d-Line.
+            6. Repeat steps 3 and 4, on the better shape estimation, and update
+                the inlier points.
+            7. Give a score to the estimated shape - the number of inlier points
+            8. Choose the shape estimation with the largest score,
+                across all iterations.
+
+        Parameters:
+            ITERATIONS: int. number of iterations to perform
+            INLIERS_THRESHOLD: float. Maximal distance range between inlier
+                                      points and the shape.
+
+        Returns: tuple. (Shape, int) the estimated shape, and estimation score.
+        """
         sub_sample_size = shape.MIN_POINTS_FOR_FITTING
         best_shape = None
         best_score = 0
