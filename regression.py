@@ -23,3 +23,8 @@ class Regressor(ShapeOperation):
         line.p1 = np.array([1, m+c])
         line.p2 = np.array([2, 2*m+c])
 
+    def visit_circle2d(self, circle, points):
+        """Perform Least-Squares on given points, and save result in given circle."""
+        # Currently not implemented. Circle remains unchanged.
+        return
+

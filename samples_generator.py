@@ -12,8 +12,9 @@ class ShapeSamples:
         self.samples = samples
 
     def plot(self):
-        self.shape.plot(plt)
+        """Plot data samples in red, and plot shape in blue, on top of them."""
         plt.scatter(x=self.samples.T[0], y=self.samples.T[1], s=1, c="red")
+        self.shape.plot(plt)
         plt.show()
 
 
@@ -48,6 +49,7 @@ class SamplesSuit:
         return iter(self._suit.values())
 
     def plot(self):
+        """Plot every ShapeSapmles in the suit, in different pop-up window."""
         for samples in self:
             samples.plot()
 
@@ -143,4 +145,16 @@ class GroundTruthSamplesGenerator(ShapeOperation):
             return max_range / abs(line_slope)
         else:
             return max_range
+
+    def visit_circle2d(self, circle, num_of_samples, samples_range):
+        """Generate points on the given circle"""
+        rand_angles = np.random.uniform(0, 2*np.pi, num_of_samples)
+        unit_circle_ys = np.sin(rand_angles)
+        unit_circle_xs = np.cos(rand_angles)
+
+        xs = unit_circle_xs * circle.radius + circle.center[0]
+        ys = unit_circle_ys * circle.radius + circle.center[1]
+
+        return np.stack([xs, ys], axis=1)
+
 

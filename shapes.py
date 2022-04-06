@@ -65,6 +65,29 @@ class Line2D(Shape):
             return dy / dx
 
 
+class Circle2D(Shape):
+    """2-dimensional circle, represented by center point and radius."""
+    DIMENSION = 2
+    MIN_POINTS_FOR_FITTING = 3
+    RANGE = 100
+
+    def __init__(self):
+        self.center = None
+        self.radius = None
+
+    def randomize(self):
+        """Randomly choose the line parameters."""
+        self.center = np.random.uniform(low=-self.RANGE, high=self.RANGE,
+                                        size=2)
+        self.radius = np.random.uniform(low=0, high=self.RANGE)
+
+    def plot(self, canvas):
+        cc = canvas.Circle(self.center, self.radius, fill=False)
+        axes = canvas.gca()
+        axes.set_aspect(1)
+        axes.add_artist(cc)
+
+
 class ShapeFactory:
     """Initialization of Shape instances of all concrete shape classes."""
     def __init__(self):
@@ -106,7 +129,11 @@ class ShapeFactory:
 
 
 class ShapeOperation(ABC):
-    """Represent abstract operation on shapes. (Abstract visitor for Shape)."""
+    """Represent abstract operation on shapes. (Abstract visitor for Shape).
+
+    Implementing classes, should implement the visit_<shape> methods,
+    for every shape type, the operation support.
+    """
     def visit(self, shape: Shape, *args, **kwargs):
         visit_method = self._fetch_visit_method(shape)
         return visit_method(shape, *args, **kwargs)
@@ -123,6 +150,9 @@ class ShapeOperation(ABC):
     def visit_line2d(self, shape: Line2D, *args, **kwargs):
         raise ShapeOperationNotImplementedError(self, shape)
 
+    @abstractmethod
+    def visit_circle2d(self, shape: Circle2D, *args, **kwargs):
+        raise ShapeOperationNotImplementedError(self, shape)
 
 class InvalidShapeError(BaseException):
     pass

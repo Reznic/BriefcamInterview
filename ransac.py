@@ -103,6 +103,26 @@ class ShapeFitter(ShapeOperation):
             line.p2 = samples[1]
             return True
 
+    def visit_circle2d(self, circle, samples):
+        p1, p2, p3 = samples[0], samples[1], samples[2]
+
+        temp = p2[0] * p2[0] + p2[1] * p2[1]
+        bc = (p1[0] * p1[0] + p1[1] * p1[1] - temp) / 2
+        cd = (temp - p3[0] * p3[0] - p3[1] * p3[1]) / 2
+        det = (p1[0] - p2[0]) * (p2[1] - p3[1]) - \
+              (p2[0] - p3[0]) * (p1[1] - p2[1])
+
+        if abs(det) < 1.0e-6:
+            return False
+
+        # Center of circle
+        cx = (bc * (p2[1] - p3[1]) - cd * (p1[1] - p2[1])) / det
+        cy = ((p1[0] - p2[0]) * cd - (p2[0] - p3[0]) * bc) / det
+
+        circle.radius = np.sqrt((cx - p1[0]) ** 2 + (cy - p1[1]) ** 2)
+        circle.center = np.array([cx, cy])
+        return True
+
 
 class DistanceToPoint(ShapeOperation):
     """Measure the shortest distance between given point/s and a shape.
@@ -114,7 +134,7 @@ class DistanceToPoint(ShapeOperation):
         samples: ndarray.
     """
     def visit_line2d(self, line, points):
-        """Measure distances between given points to given line."""
+        """Measure distances between given points and given line."""
         translated_points = points - line.p1
 
         line_slope = line.get_slope()
@@ -138,4 +158,10 @@ class DistanceToPoint(ShapeOperation):
         return np.array([[cos(angle), -sin(angle)],
                          [sin(angle), cos(angle)]])
 
+    def visit_circle2d(self, circle, points):
+        """Measure distances between given points and given circle perimeter."""
+        translated_points = points - circle.center
+        distances_from_center = np.linalg.norm(translated_points, axis=1)
+        distances_from_perimeter = np.abs(distances_from_center - circle.radius)
+        return distances_from_perimeter
 
